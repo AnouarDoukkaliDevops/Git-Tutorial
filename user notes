@@ -1,15 +1,22 @@
--there is a global configuration or local config by repository
--to show the location for every config : git config -l --show-origin
--set the default branch to main when init a new repo : git config --global init.defaultBranch main
--set git default editor to be vs code : git config --global core.editor "code --wait"
--set the user name for local project : git config user.name "username"
--set the email for local project: git config user.email "your_email"
--set the gpg key to sign the commits : git config user.signingkey "your key" . you can list existing keys by : gpg --list-keys --keyid-format LONG
--tell git to turn on signing commits  : git config --global commit.gpgsign true
--to tell git to sign tags : git config tag.gpgSign true
+git commits :
+-explain what is commit and what happen when its executed
+-explain staging area
+-explain states of files ,new , staged ,tracked etc
+check status of tracked files : git status
+check status of files including untracked : git status -u
+before commit, we add files to staging area by : git add $fileName
+-to add only tracked files and exclude new ones to staging area : git add -u .
+-to add all changes at once : git add .
+-if you add a modified file, then modify it again , you should add the second change. if you commit without adding the file again , the second change will be lost. 
+-after adding files , commit with the command :  git commit -m “message”
+-we can also express commit modified tracked files with : git commit -am “message”, this will add and commit them directly (does not include new created files)
+-git will not commit new files (untracked files) without adding them first to staging area.
+-to unstage files : git restore --staged file_name
+-to restore files : git restore file_name
+-define difference between git log and reflog and their commands
+show information about particular commit : git show <commit id>
+-to list signed commits : git log --show-signature
+- **Atomic commits:**
+💡 when possible a commit should encompass a single feature,change to fix. try to keep each commit focused on a single thing.
+-Amending Commit and their use cases
 
--in case you want to set those values globally , user --global with the commands
-- to list all configurations (global and local) : git config --list
--to list and check the local config : git config --local --list
--to list and check the global config : git config --global --list
--to unset a specific value : git config --unset  user.email
