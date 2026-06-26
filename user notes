@@ -1,0 +1,15 @@
+-there is a global configuration or local config by repository
+-to show the location for every config : git config -l --show-origin
+-set the default branch to main when init a new repo : git config --global init.defaultBranch main
+-set git default editor to be vs code : git config --global core.editor "code --wait"
+-set the user name for local project : git config user.name "username"
+-set the email for local project: git config user.email "your_email"
+-set the gpg key to sign the commits : git config user.signingkey "your key" . you can list existing keys by : gpg --list-keys --keyid-format LONG
+-tell git to turn on signing commits  : git config --global commit.gpgsign true
+-to tell git to sign tags : git config tag.gpgSign true
+
+-in case you want to set those values globally , user --global with the commands
+- to list all configurations (global and local) : git config --list
+-to list and check the local config : git config --local --list
+-to list and check the global config : git config --global --list
+-to unset a specific value : git config --unset  user.email
