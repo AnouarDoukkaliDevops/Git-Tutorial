@@ -1,0 +1,1 @@
+We create this file to introduce new changes on the main branch so we can demonstrate <rebasing> the <rebasing> branch. We will first rebase the <rebasing> branch onto main, and then merge the main branch with it using fast forward
